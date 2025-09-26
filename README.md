@@ -1,0 +1,1 @@
+This program will read in a series of characters and remove all spaces and punctuation so that the letters and numbers remain. Then, the program will determine if the string of characters is a palindrome.
