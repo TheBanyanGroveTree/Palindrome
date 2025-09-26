@@ -1,8 +1,8 @@
 /* Name: Aahana Sapra
-   Date: 9/11/2025
+   Date: 9/26/2025
    Description: This program will read in a series of characters
-   and remove all spaces and punctuation so there are only letters
-   and numbers left. Then, the program will determine if the string
+   and remove all spaces and punctuation so that only the letters
+   and numbers remain. Then, the program will determine if the string
    of characters is a palindrome.
  */
 
@@ -14,17 +14,18 @@ using namespace std;
 
 int main() {
   // read in user input
-  char userInput[80];
-  cin.get(userInput, 80);
+  const int INPUT_LENGTH = 81;
+  char userInput[INPUT_LENGTH];
+  cin.get(userInput, INPUT_LENGTH);
 
-  /* prints number of char
+  /* prints number of char read in 
      cout << "Length (null-terminated): " << strlen(userInput) << endl;
-     prints 80
+     prints 81
      cout << "Length (fixed-size): " << sizeof(userInput) << endl;
   */
   
   // remove spaces and punctuation
-  char modifiedInput[80];
+  char modifiedInput[INPUT_LENGTH];
   int indexModified = 0;
   for (int i = 0; i < strlen(userInput); i++) {
     if (isalnum(userInput[i])) {
@@ -39,7 +40,7 @@ int main() {
   modifiedInput[indexModified] = '\0';
 
   // reverse input and store in another array
-  char reverseInput[80];
+  char reverseInput[INPUT_LENGTH];
   int indexReverse = 0;
   for (int i = strlen(modifiedInput) - 1; i >= 0; i--) { // last index = length - 1
     reverseInput[indexReverse] = modifiedInput[i];
@@ -49,7 +50,7 @@ int main() {
 
   // check if input is a palindrome and print results
   if (strcmp(modifiedInput, reverseInput) == 0) {
-    cout << "Palindrome" <<  endl;
+    cout << "Palindrome." <<  endl;
   } else {
     cout << "Not a palindrome." << endl;
   }
