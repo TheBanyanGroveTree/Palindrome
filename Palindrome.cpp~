@@ -1,0 +1,50 @@
+/* Name: Aahana Sapra
+   Date: 9/5/2025
+   Description: This program will read in a series of characters
+   and remove all spaces and punctuation so there are only letters
+   and numbers left. Then, the program will determine if the string
+   of characters is a palindrome.
+ */
+
+#include <iostream>
+#include <cstring>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+  // read in user input
+  char userInput[80];
+  cin.get(userInput, 80);
+
+  // prints number of char
+  //cout << "Length (null-terminated): " << strlen(userInput) << endl;
+  // prints 80
+  //cout << "Length (fixed-size): " << sizeof(userInput) << endl;
+
+  // remove spaces and punctuation
+  char modifiedInput[80];
+  int index = 0;
+  for (int i = 0; i < strlen(userInput); i++) {
+    if (isalnum(userInput[i])) {
+      modifiedInput[index] = userInput[i];
+      // change letters lower case
+      if (isalpha(modifiedInput[index])) {
+	modifiedInput[index] = tolower(modifiedInput[index]);
+      }
+      index++;
+    }
+  }
+  modifiedInput[index] = '\0';
+  
+  cout << userInput << endl;
+  cout << modifiedInput << endl;
+
+  // check if input is a palindrome
+  char reverseInput[80];
+  for (int i = strlen(modifiedInput); i >= 0; i--) {
+
+  }
+  
+  return 0;
+}
